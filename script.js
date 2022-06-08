@@ -14,27 +14,27 @@
             localStorage.setItem("patio", JSON.stringify(veiculos));
         }
         function adicionar(veiculo, salva) {
-            var _a, _b;
+            var _a;
             const row = document.createElement("tr");
             row.innerHTML = `
-            <td>${veiculo.nome}</td>
-            <td>${veiculo.placa}</td>
-            <td>${veiculo.entrada}</td>
-            <td>
-                <button class="delete" data-placa=" ${veiculo.placa}"> X </button>
-            </td>
+                <td>${veiculo.nome}</td>
+                <td>${veiculo.placa}</td>
+                <td>${veiculo.entrada}</td>
+                <td>
+                    <button class="delete" data-placa="${veiculo.placa}">X</button>
+                </td>
             `;
             (_a = row.querySelector(".delete")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
                 remover(this.dataset.placa);
             });
-            (_b = $("#patio")) === null || _b === void 0 ? void 0 : _b.appendChild(row);
+            $("#patio").appendChild(row);
             if (salva)
                 salvar([...ler(), veiculo]);
         }
         function remover(placa) {
             const { entrada, nome } = ler().find(veiculo => veiculo.placa === placa);
             const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
-            if (!confirm(`O veículo ${nome} permaneceu por ${tempo}, Deseja encerrar?`))
+            if (!confirm(`O veículo ${nome} permaneceu por ${tempo}, deseja encerrar ?`))
                 return;
             salvar(ler().filter((veiculo) => veiculo.placa !== placa));
             render();
@@ -43,7 +43,7 @@
             $("#patio").innerHTML = " ";
             const patio = ler();
             if (patio.length) {
-                patio.forEach(veiculo => { return adicionar(veiculo); });
+                patio.forEach((veiculo) => adicionar(veiculo));
             }
         }
         return { ler, adicionar, remover, salvar, render };
@@ -60,3 +60,4 @@
         patio().adicionar({ nome, placa, entrada: new Date().toISOString() }, true);
     });
 })();
+
