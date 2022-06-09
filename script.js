@@ -60,3 +60,4 @@
         patio().adicionar({ nome, placa, entrada: new Date().toISOString() }, true);
     });
 })();
+
