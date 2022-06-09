@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(182, 167, 167, 0.555);
+}
+
+.headline{
+    padding: 10px;
+    margin: 30vh;
+    background-color: rgba(127, 255, 212, 0.699);
+    text-align: center;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input[type=text]{
+    padding: 3px;
+    margin-right: 6px;
+    border-radius: 3px;
+}
+
+input[type=text]:hover{
+    background: rgb(233, 226, 226);
+    padding: 5px;
+    border-color: white;
+}
+
+input[type=text]:focus{
+    background-color: lightblue;
+}
+
+button{
+    padding: 3px;
+}
+
+button:hover{
+    color: white;
+    background-color: grey;
+    padding: 5px;
+}
+
+table{
+    margin-top: 10px;
+    margin-left: 2.5%;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 95%;
+    background-color: whitesmoke;
+    border-collapse: collapse;
+}
+
+table, th{
+    border: 1px solid;
+}
+
